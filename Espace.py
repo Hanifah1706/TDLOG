@@ -17,7 +17,6 @@ class Espace:
 
     def recevoir(self, x, y, z):
         for value in self.base.values():
-            if value == (x, y, z)
+            if value == (x, y, z):
                 return True
             return False
-        pass
