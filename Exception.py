@@ -1,3 +1,4 @@
+
 class NoAmmunitionError(Exception):
     def __init__(self, ammunitions, message="la reserve de munition est vide"):
         self.ammunitions = ammunitions
@@ -18,14 +19,9 @@ class OutOfRangeError(Exception):
     def __str__(self):
         return f'{self.z} -> {self.message}'
 
-
-
 class DestroyedError(Exception):
-
-
     def __init__(self, message):
         self.message = message
-
 
     def __str__(self):
         return self.message
