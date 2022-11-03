@@ -1,4 +1,4 @@
-class Vessel:
+class Vessel:# classe mère
 
     def __init__(self, coordinates, max_hits, weapon):
 
