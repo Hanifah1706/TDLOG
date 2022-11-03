@@ -17,3 +17,10 @@ class OutOfRangeError(Exception):
 
     def __str__(self):
         return f'{self.z} -> {self.message}'
+
+Class DestroyedError(Exception):
+    def __init__(self,message):
+        self.message = message
+        
+    def __str__(self):
+        return self.message
