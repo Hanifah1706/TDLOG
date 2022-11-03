@@ -9,7 +9,7 @@ class Weapon:
     def fire_at(self, x: int, y: int, z: int):
         if not self.ammunitions != 0:
             raise NoAmmunitionError(ammunitions)
-        while self.ammunitions != 0 :
+        if self.ammunitions != 0 :
             self.ammunitions = self.ammunitions - 1
 
 
