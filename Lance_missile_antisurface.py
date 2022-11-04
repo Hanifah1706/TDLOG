@@ -1,9 +1,29 @@
 from Weapon import Weapon
+from Exception import OutOfRangeError
+
+
+
 class Lance_missile_antisurface(Weapon):
+    def __init__(self, ammunitions: abs, range: int):
+        super().__init__(ammunitions, range)
+        self.ammunitions = 40
+        self.range = 30
 
-    def __init__(self, x: int, y: int, z: int, ammunitions: int, range: int):
-        super().__init__(x: int, y: int, z: int, ammunitions: int, range: int)
-        self.z = 0
+    def fire_at(self, x: int, y: int, z: int):
+        super().fire_at(self, x, y, z)
+        if self.z != 0:
+            raise OutOfRangeError("la cible n'est pas admissible")
+        else:
+            print("cible atteignable")
 
-    def fire_at(self, x:float, y:float, z:float):
+
+A=Lance_missile_antisurface(23, 3)
+print(A.fire_at(1,2,2))
+
+
+
+
+
+
+
 
