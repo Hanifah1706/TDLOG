@@ -16,5 +16,5 @@ class Lances_torpilles(Weapon):
 
 
 
-A=lances_torpilles()
+A=Lances_torpilles()
 A.fire_at(1,1,-1)
