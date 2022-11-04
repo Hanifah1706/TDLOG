@@ -15,7 +15,7 @@ class Vessel:# classe mère
         try:
             self.coordinates = (x, y, z)
             if x > 100 or y > 100 or x < 0 or y < 0 or z not in [1, 0, -1]:
-                raise OutOfRangeError
+                raise OutOfRangeError("Impossible de ce déplacer à cette position")
             if self.max_hits <= 0:
                 raise DestroyedError("le destroyer détruis")
         except DestroyedError:
@@ -32,11 +32,11 @@ class Vessel:# classe mère
             if self.max_hits <= 0:
                 raise DestroyedError("le destroyer détruis")
             if distance(self.coordinates,(x,y,z))>self.weapon.range:
-                raise OutOfRangeError
+                raise OutOfRangeError("Distance hors d'atteinte!")
         except DestroyedError:
             print(" le navire est détruis, il ne peut donc tirer ")
         except OutOfRangeError:
-            print("La cible est hors d'atteinte")
+            print("La cible est hors d'atteinte! Veuillez vous rapprocher")
             self.weapon.fire_at(x, y, z)
 
 def distance(A : tuple , B : tuple):
