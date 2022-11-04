@@ -1,3 +1,4 @@
+
 class NoAmmunitionError(Exception):
     def __init__(self, ammunitions, message="la reserve de munition est vide"):
         self.ammunitions = ammunitions
@@ -23,4 +24,11 @@ class DestroyedError(Exception):
 
     def __str__(self):
         return self.message
+
+
+
+
+
+
+
 
