@@ -1,7 +1,7 @@
 from Exception import OutOfRangeError
 from Weapon import Weapon
 import unittest
-class lances_torpilles(Weapon):
+class Lances_torpilles(Weapon):
     def __init__(self):
          super().__init__(ammunitions=15,range=20)
          #self.range = 20
