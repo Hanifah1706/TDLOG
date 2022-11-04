@@ -12,6 +12,8 @@ class Lance_missiles_anti_air(Weapon):
             super().fire_at(self,x,y,z)
             raise OutOfRangeError
             print ("hors de la zone de tir!")
+        else:
+            print ("tir autorisé ")
 
 
 
