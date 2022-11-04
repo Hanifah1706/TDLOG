@@ -1,4 +1,5 @@
 from Weapon import *
+from Exception import DestroyedError
 class Vessel:# classe mère
 
     def __init__(self, coordinates: tuple, max_hits: int, weapon: Weapon):
@@ -11,9 +12,9 @@ class Vessel:# classe mère
         try:
             self.coordinates = (x, y, z)
             if self.max_hits <= 0:
-                raise DestroyedError(le destroyer détruis)
+                raise DestroyedError("le_destroyer_détruis")
         except DestroyedError:
-            print(" le navire est détruis, il ne peut donc se deplacer ")
+            print(" le navire est détruis, il ne peut donc se deplacer")
 
     def get_coordinates(self):
 
@@ -22,6 +23,14 @@ class Vessel:# classe mère
     def fire_at(self, x, y, z):
         try:
             self.weapon.fire_at(x, y, z)  # on utilise la fonction fire_at de la classe weapon déjà définie
-            raise DestroyedError(le destroyer détruis)
+            #raise DestroyedError("le destroyer détruis")
+            if self.max_hits <= 0:
+                raise DestroyedError("le_destroyer_détruis")
+            if (distance_condition):
+                raise OutOfRangeError("le_destroyer_détruis")
         except DestroyedError:
             print(" le navire est détruis, il ne peut donc tirer ")
+        except OutOfRangeError:
+            print(" le navire est détruis, il ne peut donc tirer ")
+
+
