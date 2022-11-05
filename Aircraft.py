@@ -4,7 +4,7 @@ from Exception import OutOfRangeError
 class Aircraft(Vessel):
     def __init__(self, coordinates):
         Vessel.__init__(self, coordinates, max_hits= 1, weapon=Lance_missile_antisurface)
-        if self.coordinates[3] != 1:
+        if self.coordinates[2] != 1:
             raise OutOfRangeError("Ne prend que la coordonnée z=1")
     def go_to(self,x,y,z):
         if z == 1:
