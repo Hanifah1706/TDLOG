@@ -36,7 +36,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_4(self):
         with self.assertRaises(OutOfRangeError):
-            B.fire_at(1, 1, 0)  # Lorsque z!=0 on doit avoir d'erreur. Donc ce test doit être positif
+            B.fire_at(1, 1, 1)  # Lorsque z!=0 on doit avoir d'erreur. Donc ce test doit être positif
 
     def test_5(self):
         with self.assertRaises(OutOfRangeError):
@@ -65,23 +65,23 @@ class MyTestCase(unittest.TestCase):
         with self.assertRaises(OutOfRangeError):
             F.go_to(1, 1, 1)# ne peut pas atteindre ce point car z !=0  .Donc le test est positif
 
-    def test_10(self):
+    def test_12(self):
         with self.assertRaises(OutOfRangeError):
             F.go_to(1, 1, 0)# peut  atteindre ce point car z =0  .Donc le test est negatif
 
-    def test_12(self):
+    def test_13(self):
         with self.assertRaises(OutOfRangeError):
             G.go_to(1, 1, 1)  # ne peut pas atteindre ce point car z !=0  .Donc le test est positif
 
-    def test_13(self):
+    def test_14(self):
         with self.assertRaises(OutOfRangeError):
             G.go_to(1, 1, 0)  # peut  atteindre ce point car z =0  .Donc le test est negatif
 
-    def test_14(self):
+    def test_15(self):
         with self.assertRaises(OutOfRangeError):
             I.go_to(1, 1, -1)  # ne peut pas atteindre ce point car z !=1  .Donc le test est positif
 
-    def test_15(self):
+    def test_16(self):
         with self.assertRaises(OutOfRangeError):
             I.go_to(1, 1, 1)  # peut  atteindre ce point car z =1  .Donc le test est negatif
 if __name__ == '__main__':
