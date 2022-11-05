@@ -8,7 +8,7 @@ class Lance_missile_antisurface(Weapon):
         super().__init__(ammunitions=40, range=30)
 
     def fire_at(self, x: int, y: int, z: int):
-        if self.z != 0:
+        if z != 0:
             super().fire_at(x, y, z)# On fait appel à cette méthode pour dimunier les ammunitions
             raise OutOfRangeError("la cible n'est pas admissible")
         else:
