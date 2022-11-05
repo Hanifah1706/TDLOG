@@ -1,27 +1,21 @@
-from Exception import OutOfRangeError, DestroyedError
-from Vaisseau import Vessel, distance
-from Weapon import Weapon
+from Exception import OutOfRangeError
+from Vaisseau import Vessel
+from Lance_missile_antisurface import Lance_missile_antisurface
 
 
-class Fregate(Vessel, Weapon):
-    def __init__(self, coordinates, max_hits, weapon, ammunitions, range, x=int, y=int, z=int):
-        Vessel.__init__(self, coordinates, max_hits, weapon)
-        Weapon.__init__(self, ammunitions, range)
-        self.coordinates = (x, y, z)
-        self.weapon = "lance_missile_anti-surface"
-        self.max_hits = 5
+class Fregate(Vessel):
+    def __init__(self, coordinates):
+        Vessel.__init__(self, coordinates, max_hits=5, weapon=Lance_missile_antisurface())
+        self.coordinates = coordinates
+        if self.coordinates[2] != 0:
+            raise OutOfRangeError("Ce navire ne se déplace qu'à la surface !, donc z doit être égale à 0")
 
     def go_to(self, x, y, z):
-        try:
-            self.coordinates = (x, y, 0)
-        except OutOfRangeError("vous ne pouvez pas vous deplacez dans cette zone"):
-            print("Rester dans votre zone")
+        if z == 0:
+            super().go_to(x, y, z)
+            print(" Le vaisseau se deplace")
+        else:
+            raise OutOfRangeError("vous ne pouvez pas vous deplacez dans cette zone")
 
-    def fire_at(self, x, y, z=0):
-        try:
-            self.max_hits != 0
-
-        except DestroyedError:
-            print("Votre vaisseau est détruit; vous ne pouvez ni tirer, ni vous déplacer")
-        if distance(self.coordinates, (x, y, 0)) > self.weapon.range:
-            raise OutOfRangeError
+    def fire_at(self, x, y, z):
+        super().fire_at(x, y, z)
