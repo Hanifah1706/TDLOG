@@ -1,6 +1,7 @@
 from Exception import DestroyedError
 from Exception import OutOfRangeError
 from Weapon import *
+from Exception import DestroyedError
 from math import sqrt
 
 class Vessel:# classe mère
