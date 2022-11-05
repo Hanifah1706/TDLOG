@@ -17,8 +17,6 @@ class Lance_missile_antisurface(Weapon):
             print("cible atteignable")
 
 
-A=Lance_missile_antisurface(23, 3)
-print(A.fire_at(1,2,2))
 
 
 
