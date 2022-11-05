@@ -10,11 +10,13 @@ class Lance_missile_antisurface(Weapon):
         self.range = 30
 
     def fire_at(self, x: int, y: int, z: int):
-        super().fire_at(self, x, y, z)
         if self.z != 0:
+            super().fire_at(x, y, z)
             raise OutOfRangeError("la cible n'est pas admissible")
         else:
-            print("cible atteignable")
+            print("la cible est atteignable")
+
+
 
 
 
