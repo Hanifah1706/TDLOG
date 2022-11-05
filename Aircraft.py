@@ -1,4 +1,4 @@
-from Vaisseau import Vesssel
+from Vaisseau import Vessel
 from Lance_missile_antisurface import Lance_missile_antisurface
 from Exception import OutOfRangeError
 class Aircraft(Vessel):
@@ -13,13 +13,6 @@ class Aircraft(Vessel):
         else:
             raise OutOfRangeError("Pas de déplacement du vaisseau")
             print("Le déplacement n'est pas possible")
-
-    def fire_at(self,x,y,z):
-        if self.max_hits ==0:
-            raise DestroyedError("")
-        if self.range<= self.z:
-            raise OutOfRangeError("cible inatteignable")
-            ammunitions = ammunitions-1
 
 
 
