@@ -86,3 +86,4 @@ class MyTestCase(unittest.TestCase):
             I.go_to(1, 1, 1)  # peut  atteindre ce point car z =1  .Donc le test est negatif
 if __name__ == '__main__':
     unittest.main()
+
