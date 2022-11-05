@@ -15,11 +15,6 @@ class Destroyer(Vessel):
         else:
             raise OutOfRangeError ("Déplacement non autorisé, revenir à z=0")
 
-Bateau= Destroyer((3,4,0))
-print(Bateau.coordinates)
-Bateau.go_to(3,5,2)
-print(Bateau.coordinates)
-print(Bateau.max_hits)
 
 
 
